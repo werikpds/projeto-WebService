@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
@@ -14,6 +15,7 @@ import javax.persistence.Table;
 public class Aluno implements Serializable{
 	private static final long serialVersionUID = 1l;
 	@Id
+	@GeneratedValue
 	private int id;
 	
 	@OneToOne

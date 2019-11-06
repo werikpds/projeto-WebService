@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -14,6 +15,7 @@ import javax.persistence.Table;
 public class Professor implements Serializable{
 	private static final long serialVersionUID = 1L;
 	@Id
+	@GeneratedValue
 	private int id;
 	
 	@OneToOne
