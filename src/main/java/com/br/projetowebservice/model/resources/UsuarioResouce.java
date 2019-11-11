@@ -23,10 +23,6 @@ public class UsuarioResouce {
 	@Autowired
 	private UsuarioRepository usuarioRepo;
 	
-	public java.util.List<Usuario> todosOsUsuarios(){
-		return usuarioRepo.findAll();
-	}
-	
 	@PostMapping("/salvar")
 	public ResponseEntity<Usuario> salvar(@RequestBody Usuario usuario, HttpServletResponse response){
 		Usuario u 	= this.usuarioRepo.save(usuario);
