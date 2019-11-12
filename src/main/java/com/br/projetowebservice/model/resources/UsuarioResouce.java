@@ -37,4 +37,14 @@ public class UsuarioResouce {
 	public Usuario buscarAlunoPeloId(@PathVariable int id){
 		return this.usuarioRepo.getOne(id);
 	}
+	
+	@PostMapping("/login")
+	public ResponseEntity<Usuario> logarUsuario(@RequestBody Usuario usuario, HttpServletResponse response) {
+		Usuario u = usuarioRepo.findOneByDocAndSenha(usuario.getDoc(), usuario.getSenha());
+		URI uri	= ServletUriComponentsBuilder.fromCurrentServletMapping()
+				.path("/{id}")
+				.buildAndExpand(u.getId())
+				.toUri();
+		return ResponseEntity.created(uri).body(u);
+	}
 }
